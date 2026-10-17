@@ -41,4 +41,4 @@ exit
 vagrant halt
 ```
 
-### 2. 
+### 2. Write Vagrantfile
