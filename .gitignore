@@ -2,4 +2,6 @@
 !**/
 !.gitkeep
 !.gitignore
-
+!README.md
+!DEV_DOC.md
+!Vagrantfile
