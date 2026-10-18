@@ -1,7 +1,19 @@
 # Development document
 
-## steps
-### 1. install vagrant
+
+## Common Requirements
+- You can use any tools you want to set up your host virtual machine as well as the provider used in Vagrant (I used VirtualBox).
+
+
+## Part 1
+### Requirements
+- you hace to set up 2 machines.
+- Write your first Vagrantfile using the latest stable version of the distribution
+of your choice as your operating system (I choose Debian 13: 2026-10-18).
+- allow only the bare minimum in terms of resources: 1 CPU and 1024 MB of RAM.
+
+### Steps
+#### 1. install vagrant
 install vargrant on ~/sgoinfre/ because we can't use sudo apt get and add to PATH.
 ```
 mkdir -p "$HOME/.local/bin"
@@ -40,5 +52,23 @@ clean up
 exit
 vagrant halt
 ```
+Vagrant and VirtualBox may consume a significant amount of disk space. To avoid running out of storage, you can change their default storage locations to a larger disk, such as sgoinfre.
+```
+echo 'export VAGRANT_HOME="$HOME/sgoinfre/vagrant"' >> ~/.zshrc
+source ~/.zshrc
+mkdir -p "$HOME/sgoinfre/VirtualBox VMs"
+VBoxManage setproperty machinefolder "$HOME/sgoinfre/VirtualBox VMs"
+```
 
-### 2. Write Vagrantfile
+#### 2. Write Vagrantfile
+- Requrements
+	1. Ubuntu 26.04.1 LTS
+	2. 1 CPU and 1024 MB of RAM
+
+
+- Configuration version: 2
+- Vagrant Box: `bento/debian-13`
+- resources: 1 CPU and 1024 MB of RAM
+- SSH configure: default
+- provider: virtualbox
+- network: "private_network"
