@@ -5,3 +5,4 @@
 !README.md
 !DEV_DOC.md
 !Vagrantfile
+!**/scripts/*.sh
