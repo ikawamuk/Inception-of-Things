@@ -72,3 +72,22 @@ VBoxManage setproperty machinefolder "$HOME/sgoinfre/VirtualBox VMs"
 - SSH configure: default
 - provider: virtualbox
 - network: "private_network"
+
+#### 3. setup k3s
+- Server node
+install k3s as a server
+```
+curl -sfL https://get.k3s.io | sh -
+```
+find k3s token
+```
+cat /var/lib/rancher/k3s/server/token
+# cat /var/lib/rancher/k3s/server/agent-token でも可
+```
+- Agent node
+install k3s as an agent
+```curl -sfL https://get.k3s.io | K3S_URL=https://SERVER_IP:6443 K3S_TOK
+EN=copy_token_here sh -s -
+```
+
+

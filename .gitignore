@@ -6,3 +6,4 @@
 !DEV_DOC.md
 !Vagrantfile
 !**/scripts/*.sh
+!**/confs/*.yaml
